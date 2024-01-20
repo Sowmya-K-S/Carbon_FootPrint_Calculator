@@ -46,7 +46,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			<h3 class="tittle">Register Now</h3>
 				<div class="inner-sec">
 			<div class="login p-5 bg-light mx-auto mw-100">
-				<form action="#" method="post">
+				<form action="{% url 'register' %}" method="POST">
+					{% csrf_token %}
 						<div class="form-row">
 								<div class="col-md-6 mb-3">
 										<label for="validationCustom01">First name</label>
@@ -55,7 +56,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 								</div>
 								<div class="col-md-6 mb-3">
 										<label for="validationCustom02">Email</label>
-									<input type="email" class="form-control" name="email" placeholder="" required="">
+									<input type="email" class="form-control" name="email" placeholder="enter your email" required="">
 								</div>
 							</div>
 							<div class="form-row">

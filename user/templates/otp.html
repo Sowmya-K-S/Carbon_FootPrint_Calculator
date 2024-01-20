@@ -54,14 +54,18 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				<h3 class="tittle">Email Verification</h3>
 				<div class="row inner-sec">
 					<div class="login p-5 bg-light mx-auto mw-100">
-					<form action="#" method="post">
+					<form action="{% url 'otp' %}" method="post">
+
+						{% csrf_token %}
+
 							<div class="form-group">
-							  <label for="exampleInputEmail1 mb-2">Enter OTP</label>
-							  <input type="email" class="form-control" id="otp" aria-describedby="" placeholder="" required="">
-							  <small id="emailHelp" class="form-text text-muted"></small>
+							  <label >Enter OTP</label>
+							  <input type="text" class="form-control" name="u_otp" placeholder="Enter OTP" required="">
+							
 							</div>
 							
-							<button type="submit" class="btn btn-primary submit mb-4">Sign In</button>
+							<button type="submit" class="btn btn-primary submit mb-4">Verify</button>
+
 							<p><a href="{% url 'register'}"> Don't have an account?</a></p>
 						  </form>
 		</div>
