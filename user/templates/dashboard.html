@@ -25,6 +25,28 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	<link href="//fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800"
 	    rel="stylesheet">
 		<script src="https://kit.fontawesome.com/87f7aa2b39.js" crossorigin="anonymous"></script>
+	<style>
+		 table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+
+        table, th, td {
+            border: 1px solid #dee2e6;
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #343a40;
+            color: #fff;
+        }
+
+	</style>
 </head>
 
 <body>
@@ -41,21 +63,43 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	</ol>
 	<!--//banner-->
 
+	<br>
+	
+	<cente>
+		<h2>YOUR HISTORY</h2>
+	</center>
+
+	<br>
+
     <table>
         <thead>
           <tr>
-            <th>Appointment ID</th>
             <th>Date</th>
+            <th>Food Emission</th>
+			<th>Travel Emission</th>
+			<th>Energy Emission</th>
+			<th>Water Emission</th>
+			<th>Waste Emission</th>
+			<th>Applicance Emission</th>
+			<th>Daily Emission</th>
           </tr>
         </thead>
         <tbody>
 
-          <!-- {% for i in appointment_list %}
+          {% for i in user_history %}
           <tr>
-            <td>{{i.id}}</td>
-            <td>{{i.a_date}}</td>
+            <td>{{i.date}}</td>
+            <td>{{i.food_emsn}}</td>
+            <td>{{i.travel_emsn}}</td>
+            <td>{{i.energy_emission}}</td>
+            <td>{{i.water_emission}}</td>
+            <td>{{i.waste_emission}}</td>
+            <td>{{i.appliance_emission}}</td>
+            <td>{{i.daily_emsn}}</td>
+            
           </tr>
-          {% endfor %} -->
+          {% endfor %}
+
         </tbody>
       </table>
 	

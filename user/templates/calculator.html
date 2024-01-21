@@ -29,12 +29,12 @@
   <form action="{% url 'calculate_carbon_emission' %}" method="POST">
 	{% csrf_token %}
 
-	{{energy_emission}}
+	<!-- {{energy_emission}}
 	{{travel_emission}}
 	{{food_emission}}
 	{{appliance_emission}}
 	{{water_emission}}
-	{{waste_emission}}
+	{{waste_emission}} -->
 
 	<div style="display: flex; align-items: center; flex-direction: row; flex-wrap: wrap;justify-content: space-around;">
   
@@ -152,14 +152,11 @@
 		{{ msg2 }}
 	</center>
 
-	
-	
-
 </form>
 
 <!-- popup for showing result -->
 	<!--/main-->
-	<section class="main-content-w3layouts-agileits">
+	<!-- <section class="main-content-w3layouts-agileits">
 		<div class="container">
 				<div class="inner-sec">
 			<div class="login p-5 bg-light mx-auto mw-100">
@@ -168,10 +165,8 @@
 					</div>
 			</div>
 		</div>
-	</section>
+	</section> -->
 	<!--//main-->
-
-
 
 
   {% include 'footer.html' %}

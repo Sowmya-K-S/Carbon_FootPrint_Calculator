@@ -43,7 +43,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	</div>
 	<ol class="breadcrumb">
 		<li class="breadcrumb-item">
-			<a href="index.html">Home</a>
+			<a href="{% url 'index' %}">Home</a>
 		</li>
 		<li class="breadcrumb-item active">Signin</li>
 	</ol>
@@ -51,7 +51,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	<!--/main-->
 	<section class="main-content-w3layouts-agileits">
 		<div class="container">
-				<h3 class="tittle">Sign In Now</h3>
+				<h3 class="tittle">Signin</h3>
 				<div class="row inner-sec">
 					<div class="login p-5 bg-light mx-auto mw-100">
 					<form action="{% url 'login' %}" method="post">
@@ -72,7 +72,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							
 							<button type="submit" class="btn btn-primary submit mb-4">Sign In</button>
 
-							<p><a href="register.html"> Don't have an account?</a></p>
+							<p><a href="{% url 'register' %}"> Don't have an account?Register</a></p>
 
 						  </form>
 		</div>

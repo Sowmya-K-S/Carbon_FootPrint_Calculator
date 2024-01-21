@@ -211,13 +211,14 @@ def calculate_carbon_emission(request):
     #extracting userdata
     user_data = User_Details.objects.get(email = request.session['email'])
 
+    if 'email' in request.session:
     #pushing data to database
-    User_History.objects.create(email = user_data, date=date.today(),food_emsn=food_emission,travel_emsn=travel_emission,energy_emission=energy_emission,appliance_emission=appliance_emission,water_emission=water_emission,waste_emission=waste_emission,daily_emsn=daily_emission)
-    
+        User_History.objects.create(email = user_data, date=date.today(),food_emsn=food_emission,travel_emsn=travel_emission,energy_emission=energy_emission,appliance_emission=appliance_emission,water_emission=water_emission,waste_emission=waste_emission,daily_emsn=daily_emission)
+        
 
 
     msg2=carbon_footprint(request,carbon_emission)
-    return render(request, 'calculator.html',{'msg1':"Your total Carbon emission is: "+str(round(daily_emission,2))+"KgCO2",'msg2':msg2})
+    return render(request, 'calculator.html',{'msg1':"Your total Carbon emission is: "+str(round(daily_emission,2))+"KgCO2",'msg2':msg2, 'user_data': user_data})
 
 
 
@@ -249,12 +250,12 @@ def carbon_footprint(request,carbon_emission):
                         'Daily Waste Emission': 3.03, 'Daily Water Emission': 5.0, 'Daily Appliances Emission': 8.0}
 
     # User input for daily emissions
-    daily_travel_emission = 0.0  # Replace with actual value
-    daily_energy_emission = 0.0  # Replace with actual value
-    daily_dietary_emission = 0.0  # Replace with actual value
-    daily_waste_emission = 0.0  # Replace with actual value
-    daily_water_emission = 0.0  # Replace with actual value
-    daily_appliances_emission = 0.0  # Replace with actual value
+    daily_travel_emission =carbon_emission['travel_emission']
+    daily_energy_emission = carbon_emission['energy_emission']
+    daily_dietary_emission = carbon_emission['food_emission']
+    daily_waste_emission = carbon_emission['waste_emission']
+    daily_water_emission = carbon_emission['water_emission']
+    daily_appliances_emission = carbon_emission['appliance_emission']
 
     # Calculate the ratio of user input to threshold values
     ratio = pd.Series({
@@ -333,8 +334,8 @@ def carbon_footprint(request,carbon_emission):
     return (recommendation_message)
 
 
-# def saveChallenge(request):
-#     if request.method == 'POST':
-#         User_Goal.objects.create()
+def saveChallenge(request):
+    if request.method == 'POST':
+        User_Goal.objects.create(gl_travel_emsn = request.POST['travel'],gl_energy_emsn =request.POST['travel'],gl_food_emsn=request.POST['travel'],gl_water_emsn=request.POST['travel'], gl_waste_emsn=request.POST['travel'],gl_appliance_emsn=request.POST['travel'],gl_daily_emsn=request.POST['travel'] )
         
-#         return redirect('challenges')
+    return redirect('index')

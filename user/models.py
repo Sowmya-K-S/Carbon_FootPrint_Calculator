@@ -30,8 +30,6 @@ class User_Goal(models.Model):
     gl_travel_emsn = models.IntegerField(null=True)
     gl_energy_emsn = models.IntegerField(null=True)
     gl_food_emsn = models.IntegerField(null=True)
-
-   
     gl_water_emsn = models.IntegerField(null=True)
     gl_waste_emsn = models.IntegerField(null=True)
     gl_appliance_emsn = models.IntegerField(null=True)
