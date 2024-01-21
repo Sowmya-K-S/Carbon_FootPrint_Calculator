@@ -9,22 +9,51 @@
                 <a class="navbar-brand" href="{% url 'index' %}">
                     <i class="fab fa-linode"></i> PixelPerfect</a>
             </div>
-            <div class="col-md-4 top-forms text-center mt-lg-3 mt-md-1 mt-0">
-                <span>Welcome</span>
-                <span class="mx-lg-4 mx-md-2  mx-1">
-                    <a href="{% url 'login' %}">
-                        <i class="fas fa-lock"></i> Sign In</a>
-                </span>
-                <span>
-                    <a href="{% url 'register' %}">
-                        <i class="far fa-user"></i> Register</a>
-                </span>
-            </div>
+
+            {% if user_data %}
+            
+                <div style="display:flex; align-items: center; justify-content: space-around; margin-left:500px">
+                 
+                <li class="nav-item" style="list-style: none">
+                    <a class="nav-link" href="{% url 'dashboard'%}">Dashboard</a>
+                </li>
+
+                <li class="nav-item" style="list-style: none">
+                    <a class="nav-link" href="{% url 'challenges'%}">Challenges</a>
+                </li>
+                
+                  <li class="nav-item" style="list-style: none">
+                    <a href="">
+                      <img src="{% static 'images/avatar.png' %}" alt="profile pic" style="width: 40px; height: 30px; border-radius: 50%;">
+                      <span aria-hidden="true"></span> {{user_data.name}}
+                    </a>
+                </li>
+
+                <li class="nav-item" style="list-style: none">
+                    <a class="nav-link" href="{% url 'logout' %}"><i class="fa-solid fa-power-off"></i> &nbsp;</i>Logout</a>
+                  </li>
+                </div>
+
+            {% else %}
+                <div class="col-md-4 top-forms text-center mt-lg-3 mt-md-1 mt-0">
+                    <span>Welcome</span>
+                    <span class="mx-lg-4 mx-md-2  mx-1">
+                        <a href="{% url 'login' %}">
+                            <i class="fas fa-lock"></i> Sign In</a>
+                    </span>
+                    <span>
+                        <a href="{% url 'register' %}">
+                            <i class="far fa-user"></i> Register</a>
+                    </span>
+                </div>
+            {% endif %}
+            
             <div class="col-md-4 log-icons text-right">
 
                
             </div>
         </div>
+
     </div>
 
         <div class="header_top" id="home">
@@ -57,11 +86,7 @@
                         </li>
 
                     </ul>
-                        <form action="#" method="post" class="form-inline my-2 my-lg-0 header-search">
-                            <input class="form-control mr-sm-2" type="search" placeholder="Search here..." name="Search" required="">
-                            <button class="btn btn1 my-2 my-sm-0" type="submit"><i class="fas fa-search"></i></button>
-                        </form>
-    
+                       
                     
 
                 </div>

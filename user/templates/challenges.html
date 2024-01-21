@@ -31,7 +31,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	{% include 'header.html' %}
 
 	<!--/banner-->
-	
+	<div class="banner-inner">
+	</div>
 	<ol class="breadcrumb">
 		<li class="breadcrumb-item">
 			<a href="{% url 'index' %}">Home</a>
@@ -39,42 +40,40 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		<li class="breadcrumb-item active">Register</li>
 	</ol>
 	<!--//banner-->
-	
 	<!--/main-->
 	<section class="main-content-w3layouts-agileits">
 		<div class="container">
-			<h3 class="tittle">Register Now</h3>
+			<h3 class="tittle">Challenges</h3>
 				<div class="inner-sec">
 			<div class="login p-5 bg-light mx-auto mw-100">
-				<form action="{% url 'register' %}" method="POST">
-					{{ msg }}
-					{% csrf_token %}
+				<form action="#" method="post">
 						<div class="form-row">
 								<div class="col-md-6 mb-3">
-										<label for="validationCustom01">First name</label>
 
-									<input type="text" class="form-control" name="name" placeholder="Enter your name" required="">
-								</div>
-								<div class="col-md-6 mb-3">
-										<label for="validationCustom02">Email</label>
-									<input type="email" class="form-control" name="email" placeholder="enter your email" required="">
+                                        <label for="validationCustom01"><strong>Select the goals you want to acomplish.</strong></label><br>
+
+                                        <input type="checkbox" id="Energy" name="Energy" value="1">
+                                        <label for="Energy"> Energy</label><br>
+
+                                        <input type="checkbox" id="Travel" name="Transport" value="1">
+                                        <label for="Travel"> Travel</label><br>
+
+                                        <input type="checkbox" id="Dietery" name="Dietery" value="1">
+                                        <label for="Dietery"> Dietery</label><br>
+
+                                        <input type="checkbox" id="Waste" name="Waste" value="1">
+                                        <label for="Waste"> Waste</label><br>
+
+                                        <input type="checkbox" id="water" name="water" value="1">
+                                        <label for="water">Water</label><br>
+
+                                        <input type="checkbox" id="Appliances" name="Appliances" value="1">
+                                        <label for="Appliances">Appliances</label><br>
+
+
 								</div>
 							</div>
-							<div class="form-row">
-								<div class="form-group col-md-6">
-										<label for="exampleInputPassword1 mb-2">Password</label>
-									<input type="password" class="form-control" name="password" placeholder="Enter password" required="">
-								</div>
-								<div class="form-group col-md-6">
-										<label for="exampleInputPassword2 mb-2">Confirm Password</label>
-										<input type="password" class="form-control" name="confirmpassword" placeholder="Confirm Password" required="">
-									</div>
-								
-							</div>
-							<button type="submit" class="btn btn-primary submit mb-4">Register</button>
-								<p>
-									<span>Already have an account? </span><a href="{% url 'login'%}">Login</a>
-								</p>
+							<button type="submit" class="btn btn-primary submit mb-4">Get...Set...GO!</button>
 						</form>
 		
 					</div>

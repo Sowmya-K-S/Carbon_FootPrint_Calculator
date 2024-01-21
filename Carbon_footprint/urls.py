@@ -30,6 +30,11 @@ urlpatterns = [
     path('calculator/',calculator,name="calculator"),
     path('otp/',otp,name="otp"),
     path('discover/',discover,name="discover"), 
+    path('logout/',logout,name="logout"),
+    path('challenges/',challenges, name="challenges"),
+    path('dashboard/',dashboard, name="dashboard"),
+    path('calculate_carbon_emission/',calculate_carbon_emission, name="calculate_carbon_emission"),
     
+
 
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
